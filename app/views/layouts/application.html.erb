@@ -11,9 +11,16 @@
     <header id="header" class="grid_12">
       <h1><a href="index.html">Sprout Notes</a></h1>
       <div id = "login_links">
-        <span class = 'user_name'>Abhaya</span>
-        <a href= "/">Sign In</a>
-        <a href= "/">Sign Up</a>
+
+        <% if user_signed_in? %>
+          <span class = 'user_name'><%= current_user.email %></span>
+          <%= link_to "Edit Profile",new_user_session_path %>
+          <%= link_to "My page",new_user_registration_path %>
+          <%= link_to "Log out",destroy_user_session_path %>
+        <% else %>
+          <%= link_to "Sign In",new_user_session_path %>
+          <%= link_to "Sign Up",new_user_registration_path %>
+        <% end %>
       </div>
       <%= form_tag(search_path, :method => "get") do %>
         <%= text_field_tag(:q) %>
@@ -28,10 +35,11 @@
                 <li><a href= "/">Categories</a></li>
                 <li><a href= "/">Authors</a></li>
             </ul>
-            <br class="clear" />
+
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
         </nav>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+
         <%= yield %>
     </div>
     <footer id="footer" class="grid_12">

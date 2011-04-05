@@ -15,10 +15,12 @@ group :development, :test do
   gem 'ffaker'
   gem 'irbtools'
   gem 'annotate'
+  gem 'rspec-rails'
+  gem "autotest"
+  gem 'ruby-debug19'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'machinist','>=2.0.0.beta1'
   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   gem 'launchy'
