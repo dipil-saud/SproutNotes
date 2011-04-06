@@ -9,13 +9,12 @@
 <body>
   <div id = "wrapper" class="container_12">
     <header id="header" class="grid_12">
-      <h1><a href="index.html">Sprout Notes</a></h1>
+      <h1><%= link_to "Sprout Notes", :root %></h1>
       <div id = "login_links">
 
         <% if user_signed_in? %>
           <span class = 'user_name'><%= current_user.email %></span>
-          <%= link_to "Edit Profile",new_user_session_path %>
-          <%= link_to "My page",new_user_registration_path %>
+          <%= link_to "My page", how_tos_path %>
           <%= link_to "Log out",destroy_user_session_path %>
         <% else %>
           <%= link_to "Sign In",new_user_session_path %>

@@ -2,6 +2,8 @@ SproutNotes::Application.routes.draw do
 
   devise_for :users
 
+  resources :how_tos
+
   get "home/index"
 
   root :to => 'home#index'

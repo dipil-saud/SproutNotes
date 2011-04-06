@@ -1,0 +1,10 @@
+<%= semantic_form_for (@how_to) do |f| %>
+  <% f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :description, :input_html => { :rows => 5 } %>
+    <%= f.input :instructions %>
+    <%= f.input :difficulty, :as => :select, :collection => ["Easy", "Medium", "Hard"] %>
+    <%= f.input :category %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>My Page  <%= link_to "Edit Profile",edit_user_registration_path %></h1>
+<%= link_to "Create a How To", new_how_to_path %>
+<div id="main" class="grid_8 alpha" >
+  <% @how_tos.each do |how_to| %>
+    <%= display_how_to(how_to) %>
+  <% end %>
+</div>
+

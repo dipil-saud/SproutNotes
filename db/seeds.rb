@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+[
+  { :name => "Rspec" },
+  { :name => "Rails" },
+  { :name => "Testing" },
+  { :name => "Haml" }
+].each do |attribute|
+    Category.create(attribute)
+end
