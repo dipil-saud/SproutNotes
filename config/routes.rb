@@ -1,5 +1,9 @@
 SproutNotes::Application.routes.draw do
 
+  get "comments/new"
+
+  get "comments/create"
+
   devise_for :users
 
   resources :how_tos

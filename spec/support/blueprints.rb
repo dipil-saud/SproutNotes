@@ -16,7 +16,7 @@ end
 HowTo.blueprint do
   user
   category
-  title { "How To 1" }
+  title { "How To Test" }
   description { "Description of how to" }
   difficulty { "Hard" }
   instructions { "1. Step 1"}

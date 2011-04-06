@@ -10,6 +10,12 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new how_tos page/
+      new_how_tos_path
+
+    when /the new manage_how_tos page/
+      new_manage_how_tos_path
+
     when /the new user_login page/
       new_user_login_path
 
