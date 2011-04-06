@@ -1,2 +1,4 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<%= semantic_form_for ([@how_to, @comment]) do |f| %>
+  <%= f.inputs :message %>
+  <%= f.buttons %>
+<% end %>

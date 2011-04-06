@@ -1,12 +1,12 @@
 SproutNotes::Application.routes.draw do
 
-  get "comments/new"
 
-  get "comments/create"
 
   devise_for :users
 
-  resources :how_tos
+  resources :how_tos do
+    resource :comments
+  end
 
   get "home/index"
 
