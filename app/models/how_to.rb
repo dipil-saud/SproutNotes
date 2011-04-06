@@ -8,9 +8,9 @@ class HowTo < ActiveRecord::Base
   validates :instructions, :presence => true
   validates :category, :presence => true
 
-  before_create :zero_likes 
+  before_create :zero_likes
   before_save :default_difficulty
-  
+
   private
 
   def zero_likes

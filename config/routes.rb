@@ -1,5 +1,6 @@
 SproutNotes::Application.routes.draw do
 
+<<<<<<< HEAD
 
 
   devise_for :users
@@ -8,6 +9,10 @@ SproutNotes::Application.routes.draw do
     resource :comments
   end
 
+=======
+  devise_for :users
+
+>>>>>>> model
   get "home/index"
 
   root :to => 'home#index'
