@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
-  has_many :how_tos
-  has_many :questions
+  has_many :how_tos, :dependent => :nullify
+  has_many :questions, :dependent => :nullify
 
   validates :name, :presence => true, :uniqueness => true
 end

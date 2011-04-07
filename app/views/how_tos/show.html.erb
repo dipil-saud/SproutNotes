@@ -1,17 +1,6 @@
 <div id="main" class="grid_8 alpha" >
   <%= display_how_to(@how_to) %>
-  <ul id = "comments" >
-  <% @how_to.comments.each do |comment| %>
-    <li><%= display_comment(comment) %></li>
-  <% end %>
-  </ul>
-  <% form_for ([@how_to, @how_to.comments.build]), :remote => true do |f| %>
-    <%= f.label :message, "Comment" %><br />
-    <%= f.text_area :message, :rows => 10 %><br />
-    <%= f.submit "Post comment" %>
-    <hr/>
-  <% end %>
-
+  <%= render :partial => "/comments/comment", :locals => { :commentable => @how_to }%>
 </div>
 <div id="sidebar" class="grid_4 omega" >
   <%= how_to_sidebar(@how_to.category.how_tos) %>

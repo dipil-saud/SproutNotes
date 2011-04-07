@@ -1,7 +1,7 @@
 class HowTo < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
-  has_many :comments
+  has_many :comments, :as => :commentable, :dependent => :destroy
 
   validates :title, :presence => true
   validates :description, :presence => true

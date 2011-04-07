@@ -6,9 +6,9 @@ describe User do
     @user.save!
   end
 
-  it { should have_many :how_tos }
-  it { should have_many :comments }
-  it { should have_many :questions }
+  it { should have_many(:how_tos).dependent(:destroy) }
+  it { should have_many(:comments).dependent(:destroy) }
+  it { should have_many(:questions).dependent(:destroy) }
 
   it {should validate_presence_of :email}
   it {should validate_presence_of :password}

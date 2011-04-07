@@ -1,17 +1,11 @@
-<h1>My Page  <%= link_to "Edit Profile",edit_user_registration_path %></h1>
 <div id="main" class="grid_6 alpha" >
-  <h3>My How Tos</h3>
-  <%= link_to "Create a How To", new_how_to_path %>
-  <% @how_tos.each do |how_to| %>
-    <%= render :partial => "how_to_teaser", :locals => { :how_to => how_to } %>
-  <% end %>
+  <h3>How Tos</h3>
 </div>
 
 <div id="main" class="grid_6 omega" >
-  <h3>My Questions</h3>
-  <%= link_to "Ask a Question", new_question_path %>
-  <% @questions.each do |question| %>
-     <%= render :partial => "questions/question_teaser", :locals => { :question => question } %>
+  <h3>How Tos</h3>
+   <% @how_tos.each do |how_to| %>
+     <%= render :partial => "how_to_teaser", :locals => { :how_to => how_to } %>
    <% end %>
 </div>
 

@@ -7,7 +7,7 @@ Feature: Manage questions
      And I am authenticated
 
   Scenario: Register new questions
-   Given I am on the user page
+   Given I am on the user_root page
    And I follow "Ask a Question"
    Then I should see "What's your ??"
    When I fill in "Title" with "My first question"

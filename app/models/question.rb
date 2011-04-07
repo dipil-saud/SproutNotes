@@ -2,6 +2,7 @@ class Question < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :category
+  has_many :comments, :as => :commentable, :dependent => :destroy
 
   validates_presence_of :user,:category,:title, :description
   validates_uniqueness_of :title

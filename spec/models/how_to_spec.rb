@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe HowTo do
-  it { should have_many :comments }
+  it { should have_many(:comments).dependent(:destroy) }
   it {should belong_to :user}
   it {should belong_to :category}
 

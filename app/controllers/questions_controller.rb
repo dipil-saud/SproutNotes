@@ -21,7 +21,11 @@ class QuestionsController < ApplicationController
   def destroy
     question = current_user.questions.find(params[:id])
     flash[:notice] = "#{question.title} Successfully Deleted" if question.destroy
-    redirect_to user_path
+    redirect_to user_root_path
+  end
+
+  def index
+    @questions = Question.all
   end
 
 end

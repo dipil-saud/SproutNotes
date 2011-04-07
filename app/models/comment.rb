@@ -1,11 +1,8 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
-  belongs_to :how_to
+  belongs_to :commentable, :polymorphic => true
 
   validates :message, :presence => true
-  validates :user, :presence => true
-  validates :how_to, :presence => true
-
 
 end
 

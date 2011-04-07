@@ -5,7 +5,7 @@ module HowTosHelper
       [
         "<h2>#{link_to how_to.title, how_to_path(how_to)}</h2>",
         edit_links(how_to),
-        "<span class = 'author'>By #{current_user.email}</span>",
+        "<span class = 'author'>By #{how_to.user.email}</span>",
         "<span class = 'date'>On #{how_to.created_at.to_date}</span>",
         "<span class = 'likes'>Liked By #{how_to.likes}</span>",
         "<p class = 'description'>#{how_to.description}</p>",
