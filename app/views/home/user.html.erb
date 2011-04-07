@@ -3,7 +3,7 @@
   <h3>My How Tos</h3>
   <%= link_to "Create a How To", new_how_to_path %>
   <% @how_tos.each do |how_to| %>
-    <%= render :partial => "how_to_teaser", :locals => { :how_to => how_to } %>
+    <%= render :partial => "how_tos/how_to_teaser", :locals => { :how_to => how_to } %>
   <% end %>
 </div>
 

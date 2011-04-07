@@ -33,3 +33,11 @@ Category.blueprint do
   name { "Test Category" }
 end
 
+
+Question.blueprint do
+  user
+  category
+  title {"Querying my first problem"}
+  description {"Can u solve it?"}
+
+end

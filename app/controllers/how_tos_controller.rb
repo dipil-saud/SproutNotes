@@ -3,6 +3,7 @@ class HowTosController < ApplicationController
   def index
     @user = current_user
     @how_tos = current_user.how_tos
+    @questions = current_user.questions
   end
 
   def show
@@ -41,7 +42,7 @@ class HowTosController < ApplicationController
     how_to = current_user.how_tos.find(params[:id])
     how_to.destroy
     flash[:notice] = "#{how_to.title} Successfully Deleted"
-    redirect_to how_tos_path
+    redirect_to user_path
   end
 
 end

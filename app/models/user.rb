@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :how_tos
   has_many :comments
+  has_many :questions
 end
 
 # == Schema Information

@@ -1,0 +1,7 @@
+<article class = "how_to">
+  <h2> <%= @question.title %> </h2>
+  <span class="author">By <%= current_user.email %> </span>
+  <span class = "date">On <%= @question.created_at.to_date %></span>
+  <p class = 'description'> <%= @question.description %> </p>
+</article>
+

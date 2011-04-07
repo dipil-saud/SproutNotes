@@ -1,5 +1,8 @@
 class Category < ActiveRecord::Base
   has_many :how_tos
+  has_many :questions
+
+  validates :name, :presence => true, :uniqueness => true
 end
 
 # == Schema Information

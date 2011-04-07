@@ -12,5 +12,5 @@
   { :name => "Testing" },
   { :name => "Haml" }
 ].each do |attribute|
-    Category.create(attribute)
+    Category.find_or_create_by_name(attribute)
 end

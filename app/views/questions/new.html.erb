@@ -1,0 +1,10 @@
+<h1>What's your ??</h1>
+<%= semantic_form_for (@question) do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :category, :as => :select, :collection => Category.all.map{|c| [c.name, c.id] } %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>
+<%= link_to "Cancel", user_path %>
