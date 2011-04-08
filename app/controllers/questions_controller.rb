@@ -3,12 +3,23 @@ class QuestionsController < ApplicationController
   before_filter :authenticate_user! , :except => [:index, :show]
 
   def index
-    if params[:attribute] && params[:order] && params[:search]
-      @questions = Question.search(params[:search]).order_by(params[:attribute], params[:order])
-    elsif params[:attribute] && params[:order]
-      @questions = Question.order_by(params[:attribute], params[:order])
+    if params[:category]
+      if params[:category] == "*"
+        @questions = Question.where("id")
+      else
+        category = Category.find_by_id(params[:category])
+        @questions = category.questions
+      end
     else
-      @questions = Question.order_by("created_at", "DESC")
+      @questions = Question.where("id")
+    end
+
+    if params[:attribute] && params[:order] && params[:search]
+      @questions = @questions.search(params[:search]).order_by(params[:attribute], params[:order])
+    elsif params[:attribute] && params[:order]
+      @questions = @questions.order_by(params[:attribute], params[:order])
+    else
+      @questions = @questions.order_by("created_at", "DESC")
     end
   end
 

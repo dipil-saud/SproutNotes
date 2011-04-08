@@ -23,6 +23,20 @@ describe HowTo do
       HowTo.first.difficulty.should == "Medium"
     end
   end
+
+  context "Security in mass assignment" do
+
+    it "Should not allow user_id to be assigned" do
+     how_to = HowTo.make
+     how_to.save
+     user = how_to.user
+     HowTo.first.update_attributes(:user_id => 9999, :title => "New Title")
+     HowTo.first.title.should == "New Title"
+     HowTo.first.user_id.should_not == 9999
+     HowTo.first.user_id.should == user.id
+    end
+
+  end
 end
 
 # == Schema Information

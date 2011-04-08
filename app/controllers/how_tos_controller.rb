@@ -3,19 +3,30 @@ class HowTosController < ApplicationController
   before_filter :authenticate_user! , :except => [:index, :show]
 
   def index
-    if params[:attribute] && params[:order] && params[:search]
-      @how_tos = HowTo.search(params[:search]).order_by(params[:attribute], params[:order])
-    elsif params[:attribute] && params[:order]
-      @how_tos = HowTo.order_by(params[:attribute], params[:order])
-    elsif params[:search]
-      @how_tos = HowTo.search(params[:search])
+    if params[:category]
+      if params[:category] == "*"
+        @how_tos = HowTo.where("id")
+      else
+        category = Category.find_by_id(params[:category])
+        @how_tos = category.how_tos
+      end
     else
-      @how_tos = HowTo.order_by("created_at", "DESC")
+      @how_tos = HowTo.where("id")
+    end
+
+    if params[:attribute] && params[:order] && params[:search]
+      @how_tos = @how_tos.search(params[:search]).order_by(params[:attribute], params[:order])
+    elsif params[:attribute] && params[:order]
+      @how_tos = @how_tos.order_by(params[:attribute], params[:order])
+    elsif params[:search]
+      @how_tos = @how_tos.search(params[:search])
+    else
+      @how_tos = @how_tos.order_by("created_at", "DESC")
     end
   end
 
   def show
-     @how_to = HowTo.find(params[:id])
+    @how_to = HowTo.find(params[:id])
   end
 
   def new
@@ -51,6 +62,18 @@ class HowTosController < ApplicationController
     how_to.destroy
     flash[:notice] = "#{how_to.title} Successfully Deleted"
     redirect_to user_root_path
+  end
+
+  def like
+    @how_to = HowTo.find(params[:how_to_id])
+    @how_to.likes = @how_to.likes + 1
+    @how_to.save
+    session[@how_to.id] = true
+    respond_to do |format|
+      format.html { redirect_to how_to_path(@how_to) }
+      format.js
+    end
+
   end
 
 end

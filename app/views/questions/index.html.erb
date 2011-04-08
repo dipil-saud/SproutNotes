@@ -4,6 +4,7 @@
    <%= form_tag questions_path, :method => :get do %>
      <%= select_tag :attribute, options_for_select([["Date","created_at"], ["Title","title"]], params[:attribute]) %>
      <%= select_tag :order, options_for_select(["DESC","ASC"], params[:order]) %>
+     <%= select_tag :category, options_for_select( [["All","*"]]+Category.all.map{ |c| [c.name, c.id] } , params[:category]) %>
      <%= text_field_tag :search, params[:search] %>
      <%= submit_tag "Filter" %>
    <% end %>

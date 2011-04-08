@@ -2,11 +2,13 @@ SproutNotes::Application.routes.draw do
 
   devise_for :users
   resources :questions do
-    resources :comments, :only => [:new, :create, :destroy]
+    resources :comments, :only => [:create, :destroy]
   end
   resources :how_tos do
-    resources :comments, :only => [:new, :create, :destroy]
+    resources :comments, :only => [:create, :destroy]
+    get 'like'
   end
+
 
   get "home/index"
 
@@ -14,6 +16,8 @@ SproutNotes::Application.routes.draw do
   root :to => 'home#index'
   match '/search' => 'home#search', :as => :search
   match "/user" => 'home#user', :as => 'user_root'
+  match "/users" => 'home#users', :as => :users
+  match "/user/:id" => 'home#user_show', :as => :user_show
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
