@@ -16,13 +16,26 @@ require 'ffaker'
 ].each do |attribute|
     Category.find_or_create_by_name(attribute)
 end
-
- user =  User.find_or_create_by_email(:email =>"a@a.com", :password =>"123456", :password_confirmation =>"123456" )
+ruby_code = '<code lang="ruby">
+def hello
+  puts "Hello, world!"
+end
+</code>'
+html_code =  '<code lang="html">
+  <h1>Header</h1>
+  <p>Test HTml Paragraph</p>
+</code>'
+user =  User.find_or_create_by_email(:email =>"a@a.com", :password =>"123456", :password_confirmation =>"123456" )
  (0..4).each do |y|
    user.how_tos.create(:title => Faker::Company.bs.capitalize ,
                        :description =>Faker::Lorem.paragraph(sentence_count =5),
                        :difficulty =>"Hard",
-                       :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n"),
+                       :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n")+ruby_code,
+                       :category_id =>Category.all[y].id )
+   user.how_tos.create(:title => Faker::Company.bs.capitalize ,
+                       :description =>Faker::Lorem.paragraph(sentence_count =5),
+                       :difficulty =>"Hard",
+                       :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n")+html_code,
                        :category_id =>Category.all[y].id )
    user.questions.create(:title => Faker::Company.bs.capitalize ,
                          :description =>Faker::Lorem.paragraphs(paragraph_count = 2).join("\n"),
@@ -35,7 +48,7 @@ end
     user.how_tos.create(:title => Faker::Company.bs.capitalize ,
                         :description =>Faker::Lorem.paragraph(sentence_count =5),
                         :difficulty =>"Hard",
-                        :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n"),
+                        :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n")+ruby_code,
                         :category_id =>Category.all[y].id)
 
     user.questions.create(:title => Faker::Company.bs.capitalize,

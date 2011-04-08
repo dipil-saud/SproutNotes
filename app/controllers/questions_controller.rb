@@ -13,7 +13,6 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.where("id")
     end
-
     if params[:attribute] && params[:order] && params[:search]
       @questions = @questions.search(params[:search]).order_by(params[:attribute], params[:order])
     elsif params[:attribute] && params[:order]
@@ -28,17 +27,17 @@ class QuestionsController < ApplicationController
   end
 
   def create
-     @question = current_user.questions.new(params[:question])
-      if @question.save
-        flash[:notice] = "#{@question.title} Successfully Created"
-        redirect_to question_path( @question )
-      else
-        render 'new'
-      end
+    @question = current_user.questions.new(params[:question])
+    if @question.save
+      flash[:notice] = "#{@question.title} Successfully Created"
+      redirect_to question_path( @question )
+    else
+      render 'new'
+    end
   end
 
   def show
-   @question = Question.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def destroy

@@ -1,3 +1,4 @@
+<div id="main" class="grid_8 alpha" >
 <%= semantic_form_for (@how_to) do |f| %>
   <%= f.inputs do %>
     <%= f.input :title %>
@@ -5,7 +6,42 @@
     <%= f.input :instructions %>
     <%= f.input :difficulty, :as => :select, :collection => ["Easy", "Medium", "Hard"] %>
     <%= f.input :category %>
-    <!-- <%= f.input :new_category %> -->
+    <!-- <%= f.input :new_category %> TODO: option to add new category-->
   <% end %>
   <%= f.buttons %>
 <% end %>
+</div>
+
+<div id="main" class="grid_4 omega" >
+  <h4>Instructions:</h4>
+  <p>To include code in your instructions: wrap it in a code element with attribute lang giving the language</p>
+  For Example </p>
+  <pre>
+  <%= '<code lang="ruby">
+  def hello
+    puts "Hello, world!"
+  end
+  </code>' %>
+  </pre>
+  Supported Languages Are
+  <pre>
+    C, C++
+    CSS
+    Delphi
+    diff
+    Groovy (beta)
+    HTML
+    Java
+    JavaScript
+    JSON
+    Nitro-XHTML
+    PHP
+    Python
+    RHTML (ERB+HTML)
+    Ruby
+    Scheme (beta)
+    SQL
+    XML
+    YAML
+  </pre>
+</div>

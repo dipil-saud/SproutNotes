@@ -13,7 +13,6 @@ class HowTosController < ApplicationController
     else
       @how_tos = HowTo.where("id")
     end
-
     if params[:attribute] && params[:order] && params[:search]
       @how_tos = @how_tos.search(params[:search]).order_by(params[:attribute], params[:order])
     elsif params[:attribute] && params[:order]

@@ -41,5 +41,4 @@ module HowTosHelper
       end
   end
 
-
 end

@@ -24,9 +24,9 @@ class CommentsController < ApplicationController
 
   def commentable_redirect(comment)
     if comment.commentable_type == "HowTo"
-       redirect_to how_to_path(comment.commentable)
+      redirect_to how_to_path(comment.commentable)
     elsif comment.commentable_type == "Question"
-       redirect_to question_path(comment.commentable)
+      redirect_to question_path(comment.commentable)
     end
   end
 

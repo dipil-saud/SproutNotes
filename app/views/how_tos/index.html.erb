@@ -1,4 +1,4 @@
-<div id="main" class="grid_8 alpha" >
+<div id="main" class="grid_12 alpha" >
   <h3>How Tos</h3>
   <span>Order By: </span>
   <%= form_tag how_tos_path, :method => :get do %>
@@ -8,7 +8,6 @@
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Filter" %>
   <% end %>
-
   <ul>
    <% @how_tos.each do |how_to| %>
      <li><%= link_to how_to.title, how_to_path(how_to) %></li>
@@ -16,7 +15,4 @@
    </ul>
 </div>
 
-<div id="main" class="grid_4 omega" >
-
-</div>
 
