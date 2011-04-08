@@ -1,11 +1,21 @@
-<div id="main" class="grid_6 alpha" >
+<div id="main" class="grid_8 alpha" >
   <h3>How Tos</h3>
+  <span>Order By: </span>
+  <%= form_tag how_tos_path, :method => :get do %>
+    <%= select_tag :attribute, options_for_select([["Date","created_at"], ["Popularity","likes"], ["Title","title"]], params[:attribute]) %>
+    <%= select_tag :order, options_for_select(["DESC","ASC"], params[:order]) %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+
+  <ul>
+   <% @how_tos.each do |how_to| %>
+     <li><%= link_to how_to.title, how_to_path(how_to) %></li>
+   <% end %>
+   </ul>
 </div>
 
-<div id="main" class="grid_6 omega" >
-  <h3>How Tos</h3>
-   <% @how_tos.each do |how_to| %>
-     <%= render :partial => "how_to_teaser", :locals => { :how_to => how_to } %>
-   <% end %>
+<div id="main" class="grid_4 omega" >
+
 </div>
 

@@ -11,4 +11,8 @@ class HomeController < ApplicationController
     @questions = current_user.questions
   end
 
+  def search
+    @how_tos = HowTo.search(params[:search])
+  end
+
 end

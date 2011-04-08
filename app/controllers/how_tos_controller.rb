@@ -3,7 +3,15 @@ class HowTosController < ApplicationController
   before_filter :authenticate_user! , :except => [:index, :show]
 
   def index
-   @how_tos = HowTo.all
+    if params[:attribute] && params[:order] && params[:search]
+      @how_tos = HowTo.search(params[:search]).order_by(params[:attribute], params[:order])
+    elsif params[:attribute] && params[:order]
+      @how_tos = HowTo.order_by(params[:attribute], params[:order])
+    elsif params[:search]
+      @how_tos = HowTo.search(params[:search])
+    else
+      @how_tos = HowTo.order_by("created_at", "DESC")
+    end
   end
 
   def show

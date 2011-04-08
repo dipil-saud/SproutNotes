@@ -16,6 +16,16 @@ class HowTo < ActiveRecord::Base
 
   attr_accessor :new_category
 
+  def self.order_by(attribute, option)
+    order("#{attribute} #{option}")
+  end
+
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    end
+  end
+
   private
 
   def zero_likes

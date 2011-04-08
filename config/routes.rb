@@ -12,7 +12,7 @@ SproutNotes::Application.routes.draw do
 
 
   root :to => 'home#index'
-  match '/' => 'home#index', :as => :search
+  match '/search' => 'home#search', :as => :search
   match "/user" => 'home#user', :as => 'user_root'
 
   # The priority is based upon order of creation:

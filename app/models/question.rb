@@ -9,6 +9,16 @@ class Question < ActiveRecord::Base
 
   attr_accessible :title, :description, :category_id
 
+  def self.order_by(attribute, option)
+    order("#{attribute} #{option}")
+  end
+
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    end
+  end
+
 end
 
 # == Schema Information

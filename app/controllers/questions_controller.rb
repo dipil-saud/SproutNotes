@@ -2,6 +2,16 @@ class QuestionsController < ApplicationController
 
   before_filter :authenticate_user! , :except => [:index, :show]
 
+  def index
+    if params[:attribute] && params[:order] && params[:search]
+      @questions = Question.search(params[:search]).order_by(params[:attribute], params[:order])
+    elsif params[:attribute] && params[:order]
+      @questions = Question.order_by(params[:attribute], params[:order])
+    else
+      @questions = Question.order_by("created_at", "DESC")
+    end
+  end
+
   def new
     @question = current_user.questions.build
   end
@@ -24,10 +34,6 @@ class QuestionsController < ApplicationController
     question = current_user.questions.find(params[:id])
     flash[:notice] = "#{question.title} Successfully Deleted" if question.destroy
     redirect_to user_root_path
-  end
-
-  def index
-    @questions = Question.all
   end
 
 end

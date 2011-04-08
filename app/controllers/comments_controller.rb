@@ -10,11 +10,6 @@ class CommentsController < ApplicationController
         format.html{ commentable_redirect(@comment) }
         format.js
       end
-    else
-      respond_to do |format|
-        format.html{ render 'new' }
-        format.js { render :nothing => true }
-      end
     end
   end
 
