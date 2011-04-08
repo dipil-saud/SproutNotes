@@ -4,7 +4,8 @@
     <%= f.input :description, :input_html => { :rows => 5 } %>
     <%= f.input :instructions %>
     <%= f.input :difficulty, :as => :select, :collection => ["Easy", "Medium", "Hard"] %>
-    <%= f.input :category, :as => :select, :collection => Category.all.map{|c| [c.name, c.id] } %>
+    <%= f.input :category %>
+    <!-- <%= f.input :new_category %> -->
   <% end %>
   <%= f.buttons %>
 <% end %>

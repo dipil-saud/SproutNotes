@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
 
+  before_filter :authenticate_user! , :except => [:index, :show]
+
   def new
     @question = current_user.questions.build
   end
@@ -15,7 +17,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-   @question = current_user.questions.find(params[:id])
+   @question = Question.find(params[:id])
   end
 
   def destroy

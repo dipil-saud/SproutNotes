@@ -7,6 +7,8 @@ class Question < ActiveRecord::Base
   validates_presence_of :user,:category,:title, :description
   validates_uniqueness_of :title
 
+  attr_accessible :title, :description, :category_id
+
 end
 
 # == Schema Information

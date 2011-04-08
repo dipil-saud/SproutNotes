@@ -1,5 +1,7 @@
 class HowTosController < ApplicationController
 
+  before_filter :authenticate_user! , :except => [:index, :show]
+
   def index
    @how_tos = HowTo.all
   end

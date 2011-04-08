@@ -8,8 +8,13 @@ class HowTo < ActiveRecord::Base
   validates :instructions, :presence => true
   validates :category, :presence => true
 
+  attr_accessible :title, :description, :instructions, :category_id, :new_category, :difficulty
+
   before_create :zero_likes
-  before_save :default_difficulty
+  before_save :default_difficulty, :create_new_category
+  after_initialize :default_difficulty
+
+  attr_accessor :new_category
 
   private
 
@@ -20,6 +25,13 @@ class HowTo < ActiveRecord::Base
   def default_difficulty
     if self.difficulty == nil
       self.difficulty = "Medium"
+    end
+  end
+
+  def create_new_category
+    if self.new_category != nil
+      category = Category.new(:name => self.new_category)
+      self.category_id = category.id if category.save
     end
   end
 
