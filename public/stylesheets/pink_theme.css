@@ -88,19 +88,15 @@ ol { list-style: decimal; }
 ul { list-style: disc; }
 li { margin-left: 30px; }
 
-/*pre {
-  background: #cecdcd;
-  border: 2px solid #F83D87;
+pre {
+  
   font-size: 12px;
   padding: 10px;
   opacity: .75;
-  -webkit-box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.65);
-  -moz-box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.65);
-  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.65);
-  -webkit-transition: opacity .2s linear;
+   -webkit-transition: opacity .2s linear;
   -moz-transition: opacity .2s linear;
   transition: opacity .2s linear;
-}*/
+}
 
 pre:hover {
   opacity: 1;
@@ -174,7 +170,7 @@ blockquote p { margin: 0; }
 
 /* Content */
 #content {
-  background: url(../images/content_bg.png) repeat; /* Fallback for browser that doesn't support rgba */
+  
   background: rgba(204, 204, 204, .4);
   border: 1px solid #ccc;
   border-left: none; border-right: none;
@@ -205,33 +201,6 @@ blockquote p { margin: 0; }
   border-radius: 5px;
 }
 
-/* Level 2 */
-#menu ul {
-  background: #cacaca; /* Fallback */
-  background: rgba(202, 202, 202, 0.95);
-  display: none;
-  padding: 10px;
-  list-style: none;
-  position: absolute;
-  left: 0; top: 100%;
-  z-index: 100;
-  text-shadow: 1px 1px 0 #eae7e7;
-
-  -webkit-box-shadow: 2px 3px 3px #4d4b4b;
-  -moz-box-shadow: 2px 3px 3px #4d4b4b;
-  box-shadow: 2px 3px 3px #4d4b4b;
-
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-#menu li:hover > ul { display: block;  }
-
-#menu ul li {
-  float: none;
-  min-width: 150px;
-}
 
 /* Post */
 .post {
@@ -372,10 +341,10 @@ form input[type=submit] {
 
 /* When a form input is invalid - Used on the email type field */
 input:invalid {
-  border: 2px solid red;
-  -webkit-transform: rotate(1deg);
-  -moz-transform: rotate(1deg);
-  transform: rotate(1deg);
+  border: 2px solid #ff0000;
+  -webkit-transform: rotate(359deg);
+  -moz-transform: rotate(359deg);
+  transform: rotate(359deg);
 }
 
 /* Contactform */
@@ -403,7 +372,7 @@ input:invalid {
 
 .error {
   background: #ffebe8 url(../images/cancel.png) no-repeat 10px center;
-  background: rgba(255,235,232,0.4) url(../images/cancel.png) no-repeat 10px center;
+  background: rgba(255,235,232,0.4) url(../images/cancel.png) no-repeat 20px center;
   border: 1px solid #C00;
   color: #C00;
   line-height: 30px;

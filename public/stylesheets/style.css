@@ -1,10 +1,13 @@
-p.notice {
-  background:green;
-  color:#000;
+.alert {
+  background: rgba(255, 0,0, 0.4);
+  padding: 0px 10px;
+  color: #fff;
 }
-p.alert {
-  background:red;
-  color:#000;
+
+.notice {
+  background: rgba(0, 255, 0, 0.4);;
+  padding: 0px 10px;
+  color: #fff;
 }
 
 article.how_to {
@@ -13,7 +16,7 @@ article.how_to {
 
 article.how_to h2 {
   font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
-  font-size: 35px;
+  font-size: 28px;
 }
 
 article.how_to span {
@@ -45,6 +48,7 @@ ul.comments_list {
   width: 400px;
   font-family: Verdana;
   font-size: 12px;
+  margin-left: 10px;
 }
 
 ul.comments_list li {
@@ -114,6 +118,14 @@ article.teaser:after {
     box-shadow: 0px 0 3px rgba(0,0,0,0.1);
 }
 
+article.teaser h4 a {
+  max-height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+
 .home_note {
   display: inline-block;
   width: 450px;
@@ -121,4 +133,51 @@ article.teaser:after {
 
 h1 a {
   font-size: 16px;
+}
+
+.new_comment {
+  padding: 10px;
+}
+
+
+/* CSS from jquery UI */
+
+.ui-autocomplete { position: absolute; cursor: default; }	
+
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+
+
+
+.ui-menu {
+	list-style:none;
+	padding: 2px;
+	margin: 0;
+	display:block;
+	float: left;
+}
+.ui-menu .ui-menu {
+	margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+	margin:0;
+	padding: 0;
+	zoom: 1;
+	float: left;
+	clear: left;
+	width: 100%;
+}
+.ui-menu .ui-menu-item a {
+	text-decoration:none;
+	display:block;
+	padding:.2em .4em;
+	line-height:1.5;
+	zoom:1;
+  background: #cccccc;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+  background: #F71570;
 }

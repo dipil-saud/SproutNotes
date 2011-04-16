@@ -7,6 +7,7 @@ SproutNotes::Application.routes.draw do
   resources :how_tos do
     resources :comments, :only => [:create, :destroy]
     get 'like'
+    get :autocomplete_category_name, :on => :collection
   end
 
 

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>SproutNotes</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery.min', 'rails', 'application' %>
+  <%= stylesheet_link_tag '960', 'formtastic', 'pink_theme', 'style', 'coderay' %>
+  <%= javascript_include_tag 'jquery.min', 'jquery-ui-1.8.11.custom.min', 'rails', 'autocomplete-rails','application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -21,7 +21,7 @@
         <% end %>
       </div>
       <%= form_tag(how_tos_path, :method => "get") do %>
-        <%= text_field_tag :search, params[:search] %>
+        <%= search_field_tag :search, params[:search] %>
         <%= submit_tag("Search") %>
       <% end %>
     </header>

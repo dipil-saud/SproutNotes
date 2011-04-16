@@ -6,7 +6,7 @@ class HowTo < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
   validates :instructions, :presence => true
-  validates :category, :presence => true
+  validates :new_category, :presence => true
 
   attr_accessible :title, :description, :instructions, :category_id, :new_category, :difficulty
 
@@ -39,10 +39,8 @@ class HowTo < ActiveRecord::Base
   end
 
   def create_new_category
-    if self.new_category != nil
-      category = Category.new(:name => self.new_category)
-      self.category_id = category.id if category.save
-    end
+    category = Category.find_or_create_by_name(self.new_category)
+    self.category = category
   end
 
 end

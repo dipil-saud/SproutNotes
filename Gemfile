@@ -11,6 +11,7 @@ gem 'formtastic', '~>1.2.3'
 gem 'devise'
 gem 'jquery-rails'
 gem 'coderay'
+gem 'rails3-jquery-autocomplete'
 
 group :development, :test do
   gem 'ffaker'

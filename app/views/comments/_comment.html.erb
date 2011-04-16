@@ -1,8 +1,10 @@
-<ul class = "comments_list" >
-<% commentable.comments.each do |comment| %>
-<li><%= display_comment(comment) %></li>
+<% if commentable.comments.length > 0 %>
+  <ul class = "comments_list" >
+  <% commentable.comments.each do |comment| %>
+  < li><%= display_comment(comment) %></li>
+  <% end %>
+  </ul>
 <% end %>
-</ul>
 <% if user_signed_in? %>
   <%= form_for ([commentable, commentable.comments.build]), :remote => true do |f| %>
   <%= f.label :message, "Comment" %><br />

@@ -1,6 +1,7 @@
 class HowTosController < ApplicationController
 
   before_filter :authenticate_user! , :except => [:index, :show]
+  autocomplete :category, :name
 
   def index
     if params[:category]
