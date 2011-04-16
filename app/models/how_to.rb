@@ -6,12 +6,13 @@ class HowTo < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
   validates :instructions, :presence => true
+
   validates :new_category, :presence => true
 
-  attr_accessible :title, :description, :instructions, :category_id, :new_category, :difficulty
+  attr_accessible :title, :description, :instructions, :new_category, :difficulty, :category
 
-  before_create :zero_likes
-  before_save :default_difficulty, :create_new_category
+  before_create :zero_likes, :create_new_category
+  before_save :default_difficulty
   after_initialize :default_difficulty
 
   attr_accessor :new_category
@@ -39,6 +40,7 @@ class HowTo < ActiveRecord::Base
   end
 
   def create_new_category
+    return true if self.category
     category = Category.find_or_create_by_name(self.new_category)
     self.category = category
   end

@@ -21,6 +21,7 @@ HowTo.blueprint do
   difficulty { "Hard" }
   instructions { "1. Step 1"}
   likes { 0 }
+  new_category { "Java" }
 end
 
 Comment.blueprint do

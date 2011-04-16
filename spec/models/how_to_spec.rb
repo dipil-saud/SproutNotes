@@ -8,7 +8,6 @@ describe HowTo do
   it { should validate_presence_of :title }
   it { should validate_presence_of :description }
   it { should validate_presence_of :instructions }
-  it { should validate_presence_of :category }
 
   context "When a HowTo is Created" do
     it "Should have 0 number of likes when created" do
@@ -24,7 +23,7 @@ describe HowTo do
     end
   end
 
-  context "Security in mass assignment" do
+  context "Attributes mass assignment" do
 
     it "Should not allow user_id to be assigned" do
      how_to = HowTo.make
