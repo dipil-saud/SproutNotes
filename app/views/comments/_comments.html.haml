@@ -1,5 +1,6 @@
 %ul.comments_list
-  Comments
+  %h6
+    Comments
   - commentable.comments.each do |comment|
     %li
       = render :partial => "comments/comment", :locals => { :comment => comment }
@@ -10,6 +11,5 @@
     = f.text_area :message, :rows => 10
     %br/
     = f.submit "Post comment"
-    %hr/
 - else
   Login to Comment

@@ -10,10 +10,15 @@ class HowTo < ActiveRecord::Base
   attr_accessible :title, :description, :instructions, :new_category, :difficulty, :category
 
   before_create :zero_likes
-  before_save :default_difficulty,:create_new_category
+  before_save :default_difficulty, :create_new_category
   after_initialize :default_difficulty
 
   attr_accessor :new_category
+
+  def new_category
+    return @new_category if @new_category
+    return self.category.name if self.category
+  end
 
   def self.order_by(attribute, option)
     order("#{attribute} #{option}")
@@ -38,10 +43,10 @@ class HowTo < ActiveRecord::Base
   end
 
   def create_new_category
-    return true if self.category
     if self.new_category
       category = Category.find_or_create_by_name(self.new_category)
       self.category = category
+      return true
     else
       self.errors.add(:new_category, "Category Must Be Present")
       return false

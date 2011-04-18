@@ -1,11 +1,15 @@
 %article.how_to
   %h2
     = @question.title
+    - if @question.user == current_user
+      = link_to "Delete", question_path(@question), :method => :delete, :confirm => "Are You Sure ??"
   %span.author
     By #{link_to(@question.user.name, user_show_path(@question.user))}
   %span.date
     = formatted_time @question.created_at
-  %p.description
-    = @question.description
+  %br
   %span.author
     Category: #{@question.category.name}
+  %div.instructions
+    = simple_format( coderay(@question.description) )
+

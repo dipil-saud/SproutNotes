@@ -3,6 +3,6 @@
   = f.inputs do
     = f.input :title
     = f.input :description
-    = f.input :category, :as => :select, :collection => Category.all.map{|c| [c.name, c.id] }
+    = f.autocompleted_input :new_category, :url => autocomplete_category_name_how_tos_path, :label => "Category", :required => true
   = f.buttons
 = link_to "Cancel", user_root_path
