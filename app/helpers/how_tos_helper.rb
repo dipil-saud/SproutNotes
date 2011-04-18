@@ -5,7 +5,7 @@ module HowTosHelper
       [
         "<h2>#{link_to how_to.title, how_to_path(how_to)}</h2>",
         edit_links(how_to),
-        "<span class = 'author'>By #{link_to(how_to.user.email, user_show_path(how_to.user))}</span>",
+        "<span class = 'author'>By #{link_to(how_to.user.name, user_show_path(how_to.user))}</span>",
         "<span class = 'date'>On #{how_to.created_at.to_date}</span>",
         "<span class = 'likes'>Liked By <span class = 'no_of_likes'>#{how_to.likes}</span>",
         "| #{link_to("Like", how_to_like_path(how_to), :remote => true) if !session[how_to.id] && how_to.user != current_user && user_signed_in? }</span>",
@@ -22,7 +22,7 @@ module HowTosHelper
       [
         link_to("Edit", edit_how_to_path(how_to) ),
         link_to("Delete", how_to_path(how_to), :method => :delete, :confirm => "Are You Sure???" ),
-      ]
+      ].join(' ').html_safe
     end
   end
 

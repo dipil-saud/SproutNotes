@@ -3,7 +3,7 @@ module CommentsHelper
   def display_comment(comment)
     content_tag :div, :class => :comment_box do
       [
-        "#{link_to(comment.user.email, user_root_path(comment.user), :class => 'author')}",
+        "#{link_to(comment.user.name, user_root_path(comment.user), :class => 'author')}",
         "<span class = 'date'>On #{comment.created_at}</span>",
         "<p>#{simple_format(comment.message)}</p>",
         comment_destroy_link(comment),

@@ -1,5 +1,5 @@
 <ul>
   <% @users.each do |user| %>
-    <li><%= link_to user.email, user_show_path(user.id) %></li>
+    <li><%= link_to user.name, user_show_path(user.id) %></li>
   <% end %>
 </ul>

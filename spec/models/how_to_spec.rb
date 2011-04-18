@@ -30,6 +30,7 @@ describe HowTo do
      how_to.save
      user = how_to.user
      HowTo.first.update_attributes(:user_id => 9999, :title => "New Title")
+     debugger
      HowTo.first.title.should == "New Title"
      HowTo.first.user_id.should_not == 9999
      HowTo.first.user_id.should == user.id

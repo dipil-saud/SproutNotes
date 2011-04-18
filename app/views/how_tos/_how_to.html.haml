@@ -1,0 +1,26 @@
+%article.how_to
+  %h2
+    = how_to.title
+  = edit_links(how_to)
+  %span.author
+    By
+    = link_to(how_to.user.name, user_show_path(how_to.user))
+  %span.date
+    On
+    =how_to.created_at.to_date
+  %span.likes
+    Liked By
+    %span.no_of_likes
+      = how_to.likes
+    |
+    = link_to("Like", how_to_like_path(how_to), :remote => true) if !session[how_to.id] && how_to.user != current_user && user_signed_in?
+  %p.description
+    = how_to.description
+  %span.author
+    Difficulty:
+    = how_to.difficulty
+  %span.date
+    Category:
+    =  how_to.category.name
+  %div.instructions
+    = simple_format(coderay(how_to.instructions))

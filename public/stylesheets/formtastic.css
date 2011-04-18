@@ -17,9 +17,10 @@ form.formtastic fieldset { border:0; }
 form.formtastic em, form.formtastic strong { font-style:normal; font-weight:normal; }
 form.formtastic ol, form.formtastic ul { list-style:none; }
 form.formtastic abbr, form.formtastic acronym { border:0; font-variant:normal; }
-form.formtastic input, form.formtastic textarea, form.formtastic select { font-family:inherit; font-size:inherit; font-weight:inherit; }
+form.formtastic input, form.formtastic textarea, form.formtastic select { font-family:inherit; font-size:inherit; font-weight:inherit;}
 form.formtastic input, form.formtastic textarea, form.formtastic select { font-size:100%; }
 form.formtastic legend { white-space:normal; color:#000; }
+form.formtastic input[required="required"]{ margin-bottom: 10px; overflow: hidden;}
 
 
 /* SEMANTIC ERRORS
@@ -39,12 +40,12 @@ form.formtastic fieldset.buttons li { float:left; padding-right:0.5em; }
 /* INPUT LIs
 --------------------------------------------------------------------------------------------------*/
 form.formtastic fieldset > ol > li { padding:0.5em 0; margin-top:-0.5em; margin-bottom:1em; } /* padding and negative margin juggling is for Firefox */
-form.formtastic fieldset > ol > li { overflow:auto; } /* clearing contained floats */
+form.formtastic fieldset > ol > li { overflow:hidden; } /* clearing contained floats */
 
 form.formtastic fieldset > ol > li.required { }
 form.formtastic fieldset > ol > li.optional { }
 form.formtastic fieldset > ol > li.error { }
-  
+
 
 /* LABELS
 --------------------------------------------------------------------------------------------------*/
@@ -77,16 +78,16 @@ form.formtastic fieldset > ol > li ul.errors li { padding:0; border:none; displa
 
 /* STRING, NUMERIC, PASSWORD, EMAIL, URL, PHONE & SEARCH OVERRIDES
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li.string input, 
-form.formtastic fieldset > ol > li.password input, 
+form.formtastic fieldset > ol > li.string input,
+form.formtastic fieldset > ol > li.password input,
 form.formtastic fieldset > ol > li.numeric input,
 form.formtastic fieldset > ol > li.email input,
 form.formtastic fieldset > ol > li.url input,
 form.formtastic fieldset > ol > li.phone input,
 form.formtastic fieldset > ol > li.search input { width:72%; }
 
-form.formtastic fieldset > ol > li.string input[size], 
-form.formtastic fieldset > ol > li.password input[size], 
+form.formtastic fieldset > ol > li.string input[size],
+form.formtastic fieldset > ol > li.password input[size],
 form.formtastic fieldset > ol > li.numeric input[size],
 form.formtastic fieldset > ol > li.email input[size],
 form.formtastic fieldset > ol > li.url input[size],
@@ -140,6 +141,6 @@ form.formtastic fieldset > ol > li.date fieldset ol li label,
 form.formtastic fieldset > ol > li.time fieldset ol li label,
 form.formtastic fieldset > ol > li.datetime fieldset ol li label { display:none; }
 
-form.formtastic fieldset > ol > li.date fieldset ol li label input, 
-form.formtastic fieldset > ol > li.time fieldset ol li label input, 
+form.formtastic fieldset > ol > li.date fieldset ol li label input,
+form.formtastic fieldset > ol > li.time fieldset ol li label input,
 form.formtastic fieldset > ol > li.datetime fieldset ol li label input { display:inline; margin:0; padding:0;  }

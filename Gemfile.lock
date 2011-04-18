@@ -93,6 +93,12 @@ GEM
       json (>= 1.4.6)
     guessmethod (0.2.1)
       rake (>= 0.7)
+    haml (3.0.25)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     hirb (0.4.3)
     i18n (0.5.0)
     interactive_editor (0.0.8)
@@ -215,6 +221,7 @@ DEPENDENCIES
   devise
   ffaker
   formtastic (~> 1.2.3)
+  haml-rails
   irbtools
   jquery-rails
   launchy

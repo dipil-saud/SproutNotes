@@ -31,12 +31,14 @@ user =  User.find_or_create_by_email(:email =>"a@a.com", :password =>"123456", :
                        :description =>Faker::Lorem.paragraph(sentence_count =5),
                        :difficulty =>"Hard",
                        :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n")+ruby_code,
-                       :category_id =>Category.all[y].id )
+                       :category_id =>Category.all[y].id,
+                       :new_category => "Rails" )
    user.how_tos.create(:title => Faker::Company.bs.capitalize ,
                        :description =>Faker::Lorem.paragraph(sentence_count =5),
                        :difficulty =>"Hard",
                        :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n")+html_code,
-                       :category_id =>Category.all[y].id )
+                       :category_id =>Category.all[y].id,
+                       :new_category => "Rspec" )
    user.questions.create(:title => Faker::Company.bs.capitalize ,
                          :description =>Faker::Lorem.paragraphs(paragraph_count = 2).join("\n"),
                          :category_id =>Category.all[y].id)
@@ -49,7 +51,8 @@ user =  User.find_or_create_by_email(:email =>"a@a.com", :password =>"123456", :
                         :description =>Faker::Lorem.paragraph(sentence_count =5),
                         :difficulty =>"Hard",
                         :instructions =>Faker::Lorem.paragraphs(paragraph_count = 5).join("\n")+ruby_code,
-                        :category_id =>Category.all[y].id)
+                        :category_id =>Category.all[y].id,
+                        :new_category => "Rspec")
 
     user.questions.create(:title => Faker::Company.bs.capitalize,
                           :description =>Faker::Lorem.paragraphs(paragraph_count = 2).join("\n"),

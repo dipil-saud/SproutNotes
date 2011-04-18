@@ -1,6 +1,6 @@
 <article class = "teaser">
   <h4> <%= link_to question.title, question_path(question) %> </h4>
-  <span class="author">By <%= question.user.email %> </span>
+  <span class="author">By <%= question.user.name %> </span>
   <span class = "date">On <%= question.created_at.to_date %></span>
   <p class = 'description'> <%= question.description.slice(0..100)+"..." %> </p>
 </article>

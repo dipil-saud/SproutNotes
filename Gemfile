@@ -12,6 +12,9 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'coderay'
 gem 'rails3-jquery-autocomplete'
+gem 'haml-rails'
+#gem 'ruby_parser'
+#gem 'hpricot'
 
 group :development, :test do
   gem 'ffaker'
