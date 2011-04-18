@@ -6,4 +6,8 @@ module ApplicationHelper
       end
   end
 
+  def formatted_time(time)
+    time.localtime.strftime("On %m/%d/%Y  at %I:%M%p")
+  end
+
 end

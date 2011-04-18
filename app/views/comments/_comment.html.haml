@@ -1,0 +1,7 @@
+%div.comment_box
+  = link_to(comment.user.name, user_show_path(comment.user), :class => 'author')
+  %span
+    = formatted_time comment.created_at
+  %p
+    = simple_format(comment.message)
+  = comment_destroy_link(comment)

@@ -1,0 +1,12 @@
+%h1
+  My Page  #{link_to "Edit Profile",edit_user_registration_path}
+#main.grid_6.alpha
+  %h3 My How Tos
+  = link_to "Create a How To", new_how_to_path
+  - @how_tos.each do |how_to|
+    = render :partial => "how_tos/how_to_teaser", :locals => { :how_to => how_to }
+#main.grid_6.omega
+  %h3 My Questions
+  = link_to "Ask a Question", new_question_path
+  - @questions.each do |question|
+    = render :partial => "questions/question_teaser", :locals => { :question => question }

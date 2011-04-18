@@ -1,7 +1,0 @@
-<div id="main" class="grid_8 alpha">
-  <%= render @how_to %>
-  <%= render :partial => "/comments/comment", :locals => { :commentable => @how_to }%>
-</div>
-<div id="sidebar" class="grid_4 omega" >
-  <%= how_to_sidebar(@how_to.category.how_tos) %>
-</div>

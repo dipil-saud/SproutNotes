@@ -1,0 +1,11 @@
+%article.how_to
+  %h2
+    = @question.title
+  %span.author
+    By #{link_to(@question.user.name, user_show_path(@question.user))}
+  %span.date
+    = formatted_time @question.created_at
+  %p.description
+    = @question.description
+  %span.author
+    Category: #{@question.category.name}

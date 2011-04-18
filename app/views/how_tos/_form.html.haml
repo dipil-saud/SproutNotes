@@ -1,0 +1,42 @@
+#main.grid_8.alpha
+  = semantic_form_for (@how_to) do |f|
+    = f.inputs do
+      = f.input :title
+      = f.input :description, :input_html => { :rows => 5 }
+      = f.input :instructions
+      = f.input :difficulty, :as => :select, :collection => ["Easy", "Medium", "Hard"]
+      = f.autocompleted_input :new_category, :url => autocomplete_category_name_how_tos_path, :label => "Category", :required => true
+    = f.buttons
+#main.grid_4.omega
+  %h4 Instructions:
+  %p To include code in your instructions: wrap it in a code element with attribute lang giving the language
+  For Example
+  %pre
+    :preserve
+         &lt;code lang="ruby">
+         def hello
+          puts "Hello, world!"
+         end
+         &lt;/code>
+  Supported Languages Are
+  %pre
+    :preserve
+
+          C, C++
+          CSS
+          Delphi
+          diff
+          Groovy (beta)
+          HTML
+          Java
+          JavaScript
+          JSON
+          Nitro-XHTML
+          PHP
+          Python
+          RHTML (ERB+HTML)
+          Ruby
+          Scheme (beta)
+          SQL
+          XML
+          YAML

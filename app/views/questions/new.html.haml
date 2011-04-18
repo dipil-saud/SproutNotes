@@ -1,0 +1,8 @@
+%h1 What's your ??
+= semantic_form_for (@question) do |f|
+  = f.inputs do
+    = f.input :title
+    = f.input :description
+    = f.input :category, :as => :select, :collection => Category.all.map{|c| [c.name, c.id] }
+  = f.buttons
+= link_to "Cancel", user_root_path

@@ -100,6 +100,7 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hirb (0.4.3)
+    hpricot (0.8.4)
     i18n (0.5.0)
     interactive_editor (0.0.8)
       spoon (>= 0.0.1)
@@ -184,12 +185,15 @@ GEM
     ruby-growl (3.0)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
+    ruby_parser (2.0.6)
+      sexp_processor (~> 3.0)
     rubyzip (0.9.4)
     selenium-webdriver (0.1.4)
       childprocess (>= 0.1.7)
       ffi (>= 1.0.7)
       json_pure
       rubyzip
+    sexp_processor (3.0.5)
     shoulda-matchers (1.0.0.beta2)
     sketches (0.1.1)
     spoon (0.0.1)
@@ -222,6 +226,7 @@ DEPENDENCIES
   ffaker
   formtastic (~> 1.2.3)
   haml-rails
+  hpricot
   irbtools
   jquery-rails
   launchy
@@ -230,5 +235,6 @@ DEPENDENCIES
   rails3-jquery-autocomplete
   rspec-rails
   ruby-debug19
+  ruby_parser
   shoulda-matchers
   sqlite3

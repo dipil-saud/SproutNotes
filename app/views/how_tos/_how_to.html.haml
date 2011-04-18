@@ -6,8 +6,7 @@
     By
     = link_to(how_to.user.name, user_show_path(how_to.user))
   %span.date
-    On
-    =how_to.created_at.to_date
+    = formatted_time how_to.created_at
   %span.likes
     Liked By
     %span.no_of_likes

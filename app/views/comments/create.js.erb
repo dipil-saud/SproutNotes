@@ -1,2 +1,2 @@
-$(".comments_list").append("<li><%= escape_javascript(display_comment(@comment)) %></li>");
+$(".comments_list").append("<li><%= escape_javascript(render @comment) %></li>");
 $("#comment_message").val('');

@@ -1,7 +1,0 @@
-<article class = "teaser">
-  <h4> <%=link_to how_to.title, how_to_path(how_to) %> </h4>
-  <span class="author">By <%= how_to.user.name %> </span>
-  <span class = "date">On <%= how_to.created_at.to_date %></span>
-  <span class = 'likes'>Liked By: <%= how_to.likes %></span>
-  <p class = 'description'> <%= how_to.description.slice(0..100)+"..." %> </p>
-</article>

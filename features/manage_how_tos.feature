@@ -9,7 +9,7 @@ When I am on the new_how_to page
 And I fill in "Title" with "Testing cucumber"
 And I fill in "Description" with "Description for testing"
 And I fill in "Instructions" with "Step1:Go to step2 Step2:Go to step1"
-And I select "Rails" from "Category"
+And I fill in "Category" with "Rails"
 And I press "Create How to"
 Then I should see "Testing cucumber"
 

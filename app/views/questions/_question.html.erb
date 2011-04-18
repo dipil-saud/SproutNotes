@@ -1,8 +1,0 @@
-<article class = "how_to">
-  <h2> <%= @question.title %> </h2>
-  <span class="author">By <%= link_to(@question.user.name, user_show_path(@question.user)) %> </span>
-  <span class = "date">On <%= @question.created_at.to_date %></span>
-  <p class = 'description'> <%= @question.description %> </p>
-  <span class="author">Category: <%= @question.category.name %> </span>
-</article>
-

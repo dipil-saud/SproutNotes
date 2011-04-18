@@ -1,0 +1,9 @@
+%article.teaser
+  %h4
+    = link_to question.title, question_path(question)
+  %span.author
+    By #{question.user.name}
+  %span.date
+    On #{question.created_at.to_date}
+  %p.description
+    = question.description.slice(0..100)+"..."

@@ -1,0 +1,11 @@
+%article.teaser
+  %h4
+    = link_to how_to.title, how_to_path(how_to)
+  %span.author
+    By #{how_to.user.name}
+  %span.date
+    On #{how_to.created_at.to_date}
+  %span.likes
+    Liked By: #{how_to.likes}
+  %p.description
+    = how_to.description.slice(0..100)+"..."

@@ -8,6 +8,7 @@ require 'machinist/active_record'
 #     body  { "Lorem ipsum..." }
 #   end
 User.blueprint do
+  name { "Abhaya Thapa"}
   email { "abhay@thapa.com" }
   password { "123456" }
   password_confirmation { "123456" }
