@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :how_tos, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :questions, :dependent => :destroy
+
+  default_scope order('name asc')
 end
 
 # == Schema Information

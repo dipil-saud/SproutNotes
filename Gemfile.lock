@@ -123,6 +123,8 @@ GEM
       thor (~> 0.14.4)
     json (1.5.1)
     json_pure (1.5.1)
+    kaminari (0.10.4)
+      rails (>= 3.0.0)
     launchy (0.4.0)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -229,6 +231,7 @@ DEPENDENCIES
   hpricot
   irbtools
   jquery-rails
+  kaminari
   launchy
   machinist (>= 2.0.0.beta1)
   rails (= 3.0.5)

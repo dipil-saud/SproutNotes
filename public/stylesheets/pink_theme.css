@@ -89,13 +89,9 @@ ul { list-style: disc; }
 li { margin-left: 30px; }
 
 pre {
-  
+
   font-size: 12px;
   padding: 10px;
-  opacity: .75;
-   -webkit-transition: opacity .2s linear;
-  -moz-transition: opacity .2s linear;
-  transition: opacity .2s linear;
 }
 
 pre:hover {
@@ -170,7 +166,7 @@ blockquote p { margin: 0; }
 
 /* Content */
 #content {
-  
+
   background: rgba(204, 204, 204, .4);
   border: 1px solid #ccc;
   border-left: none; border-right: none;

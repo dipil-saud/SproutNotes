@@ -7,6 +7,9 @@
     = select_tag :category, options_for_select( [["All","*"]]+Category.all.map{ |c| [c.name, c.id] } , params[:category])
     = text_field_tag :search, params[:search]
     = submit_tag "Filter"
+  = paginate @how_tos
   %ul
     - @how_tos.each do |how_to|
-      %li= link_to how_to.title, how_to_path(how_to)
+      .home_note
+        = render :partial => "how_to_teaser", :locals => { :how_to => how_to }
+

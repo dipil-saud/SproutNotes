@@ -2,6 +2,7 @@ class HowTosController < ApplicationController
 
   before_filter :authenticate_user! , :except => [:index, :show]
   autocomplete :category, :name
+  PER_PAGE = 4
 
   def index
     if params[:category]
@@ -23,6 +24,7 @@ class HowTosController < ApplicationController
     else
       @how_tos = @how_tos.order_by("created_at", "DESC")
     end
+    @how_tos = @how_tos.page(params[:page]).per(PER_PAGE)
   end
 
   def show

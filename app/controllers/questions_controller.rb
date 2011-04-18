@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
   before_filter :authenticate_user! , :except => [:index, :show]
+  PER_PAGE = 4
 
   def index
     if params[:category]
@@ -20,6 +21,7 @@ class QuestionsController < ApplicationController
     else
       @questions = @questions.order_by("created_at", "DESC")
     end
+    @questions = @questions.page(params[:page]).per(PER_PAGE)
   end
 
   def new

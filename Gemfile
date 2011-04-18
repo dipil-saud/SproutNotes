@@ -15,6 +15,7 @@ gem 'rails3-jquery-autocomplete'
 gem 'haml-rails'
 gem 'ruby_parser'
 gem 'hpricot'
+gem 'kaminari'
 
 group :development, :test do
   gem 'ffaker'

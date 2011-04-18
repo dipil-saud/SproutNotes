@@ -1,4 +1,4 @@
-#main.grid_8.alpha
+#main.grid_12.alpha
   %h3 Questions
   %span Order By:
   = form_tag questions_path, :method => :get do
@@ -7,6 +7,7 @@
     = select_tag :category, options_for_select( [["All","*"]]+Category.all.map{ |c| [c.name, c.id] } , params[:category])
     = text_field_tag :search, params[:search]
     = submit_tag "Filter"
-  %ul
-    - @questions.each do |question|
-      %li= link_to question.title, question_path(question)
+  = paginate @questions
+  - @questions.each do |question|
+    .home_note
+      = render :partial => "question_teaser", :locals => { :question => question }
