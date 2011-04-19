@@ -16,6 +16,8 @@ gem 'haml-rails'
 gem 'ruby_parser'
 gem 'hpricot'
 gem 'kaminari'
+gem 'carrierwave'
+# gem 'rmagick'
 
 group :development, :test do
   gem 'ffaker'

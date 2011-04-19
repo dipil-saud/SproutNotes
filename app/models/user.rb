@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :questions, :dependent => :destroy
 
-  default_scope order('name asc')
+  default_scope order('LOWER(name) asc')
 end
 
 # == Schema Information

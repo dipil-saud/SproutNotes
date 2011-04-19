@@ -53,6 +53,8 @@ GEM
       alias (>= 0.2.2)
       hirb (>= 0.3.5)
     builder (2.1.2)
+    carrierwave (0.5.3)
+      activesupport (~> 3.0)
     childprocess (0.1.8)
       ffi (~> 1.0.6)
     clipboard (0.9.7)
@@ -221,6 +223,7 @@ DEPENDENCIES
   annotate
   autotest
   capybara!
+  carrierwave
   coderay
   cucumber-rails
   database_cleaner

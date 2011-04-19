@@ -6,14 +6,18 @@ class HowTo < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
   validates :instructions, :presence => true
+  validates :screenshot, :presence => true
 
-  attr_accessible :title, :description, :instructions, :new_category, :difficulty, :category
+  attr_accessible :title, :description, :instructions, :new_category, :difficulty, :category, :screenshot
+  mount_uploader :screenshot, ImageUploader
+
 
   before_create :zero_likes
   before_save :default_difficulty, :create_new_category
   after_initialize :default_difficulty
 
   attr_accessor :new_category
+
 
   def new_category
     return @new_category if @new_category
@@ -29,8 +33,6 @@ class HowTo < ActiveRecord::Base
       where('title LIKE ?', "%#{search}%")
     end
   end
-
-  private
 
   def zero_likes
     self.likes = 0
@@ -52,6 +54,9 @@ class HowTo < ActiveRecord::Base
       return false
     end
   end
+
+
+
 
 end
 

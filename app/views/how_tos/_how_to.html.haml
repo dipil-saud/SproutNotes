@@ -23,3 +23,8 @@
     =  how_to.category.name
   %div.instructions
     = simple_format(coderay(how_to.instructions))
+  - if how_to.screenshot.to_s
+    %div#screenshot_thumbnail
+      = image_tag how_to.screenshot.to_s, :class => "thumbnail", :alt => "Click to View Larger Image"
+    %div#screenshot{ :title => "Screenshot"}
+      = image_tag how_to.screenshot.to_s
