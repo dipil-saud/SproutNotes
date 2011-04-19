@@ -1,7 +1,7 @@
 %article.how_to
   %h2
     = how_to.title
-  = edit_links(how_to)
+    = edit_links(how_to)
   %span.author
     By
     = link_to(how_to.user.name, user_show_path(how_to.user))

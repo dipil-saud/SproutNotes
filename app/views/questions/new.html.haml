@@ -1,8 +1,9 @@
 %h1 What's your ??
-= semantic_form_for (@question) do |f|
+= semantic_form_for (@question) , :html => {:multipart => true} do |f|
   = f.inputs do
     = f.input :title
     = f.input :description
+    = f.input :screenshot, :as => :file
     = f.autocompleted_input :new_category, :url => autocomplete_category_name_how_tos_path, :label => "Category", :required => true
   = f.buttons
 = link_to "Cancel", user_root_path

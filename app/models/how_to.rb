@@ -6,7 +6,6 @@ class HowTo < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
   validates :instructions, :presence => true
-  validates :screenshot, :presence => true
 
   attr_accessible :title, :description, :instructions, :new_category, :difficulty, :category, :screenshot
   mount_uploader :screenshot, ImageUploader
@@ -17,6 +16,8 @@ class HowTo < ActiveRecord::Base
   after_initialize :default_difficulty
 
   attr_accessor :new_category
+
+  scope :popular, order('likes DESC')
 
 
   def new_category

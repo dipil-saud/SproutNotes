@@ -1,3 +1,12 @@
+@font-face{
+  font-family:babysitter;
+  src: url(../fonts/BabySitter.ttf);
+}
+@font-face{
+  font-family:handwriting;
+  src: url(../fonts/Hand.ttf);
+}
+
 .alert {
   background: rgba(255, 0,0, 0.4);
   padding: 0px 10px;
@@ -17,6 +26,13 @@ article.how_to {
 article.how_to h2 {
   font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif;
   font-size: 28px;
+}
+
+article.how_to h2 a{
+  font-size: 12px;
+  font-style: italic;
+  float:right;
+  margin : 10px;
 }
 
 article.how_to span {
@@ -41,7 +57,7 @@ article.how_to p.description {
 }
 
 ul.comments_list {
-  background: #f3f3f3;
+  background: #f9f9f9;
   border: 1px solid #818181;
   padding: 15px;
   margin-top: 20px;
@@ -126,10 +142,24 @@ article.teaser h4 a {
   padding-bottom: 5px;
 }
 
+.notes_board {
+    background: #00493e;
+    border: 10px solid #d28a35;
+    box-shadow: 0px 0px 30px #000 inset;
+    margin: 5px;
+    padding: 5px;
+}
 
+.notes_board h3 {
+    text-align: center;
+    margin: 35px 0px 15px 0;
+    color: white;
+    font-family: babysitter;
+    font-size: 50px;
+}
 .home_note {
   display: inline-block;
-  width: 450px;
+  width: 430px;
 }
 
 h1 a {
@@ -148,8 +178,94 @@ img.thumbnail {
 
 #screenshot {
     display: none;
+    max-width: 1000px;
+    max-height: 800px;
 }
 
+nav.pagination {
+    text-align: center;
+}
+
+nav.pagination a {
+    color: #fff;
+}
+
+nav.pagination a:hover {
+    background: none;
+    font-size: 20px;
+}
+
+nav.pagination span.page.current {
+    font-size: 25px;
+    color: #fff;
+}
+
+ul#users_list {
+    padding: 50px 100px !important;
+}
+
+ul#users_list li a{
+    font-family: handwriting;
+}
+
+ul#users_list li a:hover{
+    background: none;
+    color: green;
+}
+
+a.create_question {
+    display:block;
+    width:100px;
+    height:50px;
+    background:#fe0;
+    -webkit-transform:rotate(-25deg);
+    -moz-transform:rotate(-45deg);
+    rotation:-45deg;
+    position:relative;
+    text-align:center;
+    text-decoration:none;
+    color:#000;
+    font-weight:bold;
+    font-family:Arial, sans-serif;
+    margin-left: 10px;
+}
+
+form input[type=submit] {
+      background: #eee;
+      background: -moz-linear-gradient(top, #eee 0%, #ccc 100%);
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ccc));
+      border: 1px solid #ccc;
+      border-bottom: 1px solid #bbb;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      color: #333;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 5px 10px;
+      text-align: center;
+      text-shadow: 0 1px 0 #eee;
+}
+
+form input[type = submit]:hover {
+    background: #ddd;
+      background: -moz-linear-gradient(top, #ddd 0%, #bbb 100%);
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ddd), to(#bbb));
+      border: 1px solid #bbb;
+      border-bottom: 1px solid #999;
+      cursor: pointer;
+      text-shadow: 0 1px 0 #ddd;
+}
+
+form input[type = submit]:active {
+    border: 1px solid #aaa;
+     border-bottom: 1px solid #888;
+     -moz-box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;
+     -webkit-box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;
+     box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;
+}
 
 
 /* CSS from jquery UI */
@@ -191,7 +307,7 @@ img.thumbnail {
 .ui-menu .ui-menu-item a.ui-state-active {
     font-weight: normal;
     margin: -1px;
-  background: #F71570;
+    background: #73be50 ;
 }
 
 /*
@@ -205,7 +321,7 @@ img.thumbnail {
  */
 .ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: hidden; }
 .ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
-.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; } 
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; }
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
 .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }

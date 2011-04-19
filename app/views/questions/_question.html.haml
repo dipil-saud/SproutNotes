@@ -12,4 +12,9 @@
     Category: #{@question.category.name}
   %div.instructions
     = simple_format( coderay(@question.description) )
+  - if @question.screenshot.to_s
+    %div#screenshot_thumbnail
+      = image_tag @question.screenshot.to_s, :class => "thumbnail", :alt => "Click to View Larger Image"
+    %div#screenshot{ :title => "Screenshot"}
+      = image_tag @question.screenshot.to_s
 

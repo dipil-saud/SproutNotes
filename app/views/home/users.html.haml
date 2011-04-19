@@ -1,21 +1,8 @@
-%h3 Hall of Fame
-%table#one-column-emphasis
-  %colgroup
-    %col.oce-first
-  %thead
-    %tr
-      %th{ :scope => "col"} Name
-      %th{ :scope => "col"} HowTos
-      %th{ :scope => "col"} Questions
-      %th{ :scope => "col"} Comments
-  %tbody
+= javascript_include_tag 'jquery.tagcloud.min', 'users_tagcloud'
+.notes_board
+  %h3
+    Hall of Fame
+  %ul#users_list
     - @users.each do |user|
-      %tr
-        %td
-          = link_to user.name, user_show_path(user)
-        %td
-          = user.how_tos.length
-        %td
-          = user.questions.length
-        %td
-          = user.comments.length
+      %li{:value => "#{user_points(user)}"}
+        = link_to user.name, user_show_path(user)

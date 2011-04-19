@@ -24,6 +24,7 @@ class HomeController < ApplicationController
     @user = User.find_by_id(params[:id])
     @how_tos = @user.how_tos
     @questions = @user.questions
+    render 'user'
   end
 
 

@@ -1,5 +1,6 @@
 #main
-  %h3 Recent How Tos
-  - @how_tos.each do |how_to|
-    .home_note
-      = render :partial => "how_tos/how_to_teaser", :locals => { :how_to => how_to }
+  .notes_board
+    %h3 Recent HowTos
+    - @how_tos.each do |how_to|
+      .home_note
+        = render :partial => "how_tos/how_to_teaser", :locals => { :how_to => how_to }

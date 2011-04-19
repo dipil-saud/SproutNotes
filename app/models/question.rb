@@ -7,7 +7,9 @@ class Question < ActiveRecord::Base
   validates_presence_of :user,:title, :description
   validates_uniqueness_of :title
 
-  attr_accessible :title, :description, :category, :new_category
+  attr_accessible :title, :description, :category, :new_category, :screenshot
+
+  mount_uploader :screenshot, ImageUploader
 
   before_save :create_new_category
   attr_accessor :new_category

@@ -1,9 +1,0 @@
-%h1= "#{@user.name}'s Page"
-#main.grid_6.alpha
-  %h3 How Tos
-  - @how_tos.each do |how_to|
-    = render :partial => "how_tos/how_to_teaser", :locals => { :how_to => how_to }
-#main.grid_6.omega
-  %h3 Questions
-  - @questions.each do |question|
-    = render :partial => "questions/question_teaser", :locals => { :question => question }

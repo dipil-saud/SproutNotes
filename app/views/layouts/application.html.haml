@@ -3,7 +3,7 @@
   %head
     %title SproutNotes
     = stylesheet_link_tag '960', 'formtastic', 'jquery-ui-1.8.11.custom', 'pink_theme', 'style', 'coderay', 'table'
-    = javascript_include_tag 'jquery.min', 'jquery-ui-1.8.11.custom.min', 'rails', 'autocomplete-rails','application'
+    = javascript_include_tag 'jquery.min', 'jquery-ui-1.8.11.custom.min', 'rails', 'autocomplete-rails', 'application'
     = csrf_meta_tag
   %body
     #wrapper.container_12
@@ -23,6 +23,7 @@
       #content
         %nav
           %ul#menu.clearfix
+            %li= link_to "Home", :root
             %li= link_to "HowTos", how_tos_path
             %li= link_to "Questions", questions_path
             %li= link_to "Users", users_path
@@ -32,4 +33,4 @@
       %footer#footer.grid_12
         %p
           Copyright &copy; 2011
-          %a{:href => "#"} SproutNotes
+          %a{:href => "#"} Sprout Technologies

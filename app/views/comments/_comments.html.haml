@@ -1,6 +1,7 @@
 %ul.comments_list
   %h6
-    Comments
+    %span#comments_no
+      = pluralize(commentable.comments.length, "comment")
   - commentable.comments.each do |comment|
     %li
       = render :partial => "comments/comment", :locals => { :comment => comment }

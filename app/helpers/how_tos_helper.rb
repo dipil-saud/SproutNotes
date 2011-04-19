@@ -3,8 +3,8 @@ module HowTosHelper
   def edit_links ( how_to )
     if how_to.user == current_user
       [
-        link_to("Edit", edit_how_to_path(how_to) ),
         link_to("Delete", how_to_path(how_to), :method => :delete, :confirm => "Are You Sure???" ),
+        link_to("Edit", edit_how_to_path(how_to) ),
       ].join(' ').html_safe
     end
   end
