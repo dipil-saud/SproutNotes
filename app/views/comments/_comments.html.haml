@@ -6,7 +6,7 @@
     %li
       = render :partial => "comments/comment", :locals => { :comment => comment }
 - if user_signed_in?
-  = form_for ([commentable, commentable.comments.build]), :remote => true do |f|
+  = form_for(([commentable, commentable.comments.build]), :remote => true) do |f|
     = f.label :message, "Comment"
     %br/
     = f.text_area :message, :rows => 10
