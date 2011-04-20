@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 /* End reset */
 
 body {
-  background: url(../images/soil_grass.png) top repeat-x,
+  background: url(../images/soil_grass.gif) top repeat-x,
                 url(../images/soil.jpg) top repeat;
 
   /*background: #eee url(../images/bg.png) repeat;*/
