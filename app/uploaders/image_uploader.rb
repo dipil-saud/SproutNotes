@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support:
@@ -7,13 +6,18 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :s3
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+
   def store_dir
-      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      if Rails.env.production?
+        "#{model.class.to_s.underscore}/#{model.id}"
+      else
+        "uploads/#{model.class.to_s.underscore}/#{model.id}"
+      end
   end
 
   def cache_dir

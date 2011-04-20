@@ -17,6 +17,7 @@ gem 'ruby_parser'
 gem 'hpricot'
 gem 'kaminari'
 gem 'carrierwave'
+gem 'fog'
 # gem 'rmagick'
 
 group :development, :test do

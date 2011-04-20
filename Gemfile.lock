@@ -79,12 +79,23 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    excon (0.6.2)
     fancy_irb (0.6.5)
       unicode-display_width (>= 0.1.1)
       wirb (>= 0.2.4)
     ffaker (1.5.0)
     ffi (1.0.7)
       rake (>= 0.8.7)
+    fog (0.7.2)
+      builder
+      excon (>= 0.6.1)
+      formatador (>= 0.1.3)
+      json
+      mime-types
+      net-ssh (>= 2.1.3)
+      nokogiri (>= 1.4.4)
+      ruby-hmac
+    formatador (0.1.3)
     formtastic (1.2.3)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
@@ -139,6 +150,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    net-ssh (2.1.4)
     nokogiri (1.4.4)
     ori (0.1.0)
     orm_adapter (0.0.4)
@@ -187,6 +199,7 @@ GEM
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
     ruby-growl (3.0)
+    ruby-hmac (0.4.0)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     ruby_parser (2.0.6)
@@ -229,6 +242,7 @@ DEPENDENCIES
   database_cleaner
   devise
   ffaker
+  fog
   formtastic (~> 1.2.3)
   haml-rails
   hpricot
