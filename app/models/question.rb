@@ -31,14 +31,11 @@ class Question < ActiveRecord::Base
 
   def create_new_category
     if self.new_category
-      puts self.new_category
-      puts "Asfasdfasdf"
       category = Category.find_or_create_by_name(self.new_category)
       self.category = category
       return true
     else
       puts self.new_category
-      puts "Asfasdfasdf"
       self.errors.add(:new_category, "Category Must Be Present")
       return false
     end

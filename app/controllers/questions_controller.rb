@@ -6,13 +6,13 @@ class QuestionsController < ApplicationController
   def index
     if params[:category]
       if params[:category] == "*"
-        @questions = Question
+        @questions = Question.where(true)
       else
         category = Category.find_by_id(params[:category])
         @questions = category.questions
       end
     else
-      @questions = Question
+      @questions = Question.where(true)
     end
     if params[:attribute] && params[:order] && params[:search]
       @questions = @questions.search(params[:search]).order_by(params[:attribute], params[:order])
