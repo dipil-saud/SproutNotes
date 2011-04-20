@@ -7,13 +7,13 @@ class HowTosController < ApplicationController
   def index
     if params[:category]
       if params[:category] == "*"
-        @how_tos = HowTo.where("id")
+        @how_tos = HowTo
       else
         category = Category.find_by_id(params[:category])
         @how_tos = category.how_tos
       end
     else
-      @how_tos = HowTo.where("id")
+      @how_tos = HowTo
     end
     if params[:attribute] && params[:order] && params[:search]
       @how_tos = @how_tos.search(params[:search]).order_by(params[:attribute], params[:order])
