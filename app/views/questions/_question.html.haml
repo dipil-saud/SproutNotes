@@ -11,7 +11,7 @@
   %span.author
     Category: #{@question.category.name}
   %div.instructions
-    = simple_format( coderay(@question.description) )
+    = textilize(coderay(@question.description)).html_safe
   - if @question.screenshot.to_s
     %div#screenshot_thumbnail
       %span Screenshot

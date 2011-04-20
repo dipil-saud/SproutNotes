@@ -18,6 +18,7 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'fog'
+gem 'RedCloth'
 # gem 'rmagick'
 
 group :development, :test do

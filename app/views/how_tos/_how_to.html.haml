@@ -22,7 +22,7 @@
     Category:
     =  how_to.category.name
   %div.instructions
-    = simple_format(coderay(how_to.instructions))
+    = textilize(coderay(how_to.instructions)).html_safe
   - if how_to.screenshot.to_s
     %div#screenshot_thumbnail
       %span Screenshot
