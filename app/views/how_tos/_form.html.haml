@@ -1,5 +1,5 @@
 #main.grid_8.alpha
-  = semantic_form_for (@how_to) , :html => {:multipart => true} do |f|
+  = semantic_form_for (@how_to, :html => {:multipart => true})  do |f|
     = f.inputs do
       = f.input :title
       = f.input :description, :input_html => { :rows => 5 }

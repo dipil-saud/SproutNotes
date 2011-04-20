@@ -1,5 +1,5 @@
 %h1 What's your ??
-= semantic_form_for (@question) , :html => {:multipart => true} do |f|
+= semantic_form_for (@question , :html => {:multipart => true}) do |f|
   = f.inputs do
     = f.input :title
     = f.input :description
