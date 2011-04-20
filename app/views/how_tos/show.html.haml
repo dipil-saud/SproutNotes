@@ -2,4 +2,5 @@
   = render @how_to
   = render :partial => "/comments/comments", :locals => { :commentable => @how_to }
 #sidebar.grid_4.omega
-  = how_to_sidebar(@how_to.category.how_tos.popular)
+  = how_to_sidebar("Related",@how_to.category.how_tos.popular.limit(5) )
+  = how_to_sidebar("Top",HowTo.popular.limit(5) )

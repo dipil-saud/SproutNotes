@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
   attr_accessible :name
 
-  default_scope order('name ASC')
+  default_scope order('LOWER(name) ASC')
 end
 
 # == Schema Information

@@ -2,4 +2,5 @@
   = render 'question'
   = render :partial => "/comments/comments", :locals => { :commentable => @question }
 #sidebar.grid_4.omega
-  = question_sidebar(@question.category.questions)
+  = question_sidebar("Related", @question.category.questions.limit(5))
+

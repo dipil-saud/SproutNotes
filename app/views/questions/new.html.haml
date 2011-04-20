@@ -1,9 +1,47 @@
-%h1 What's your ??
-= semantic_form_for (@question , :html => {:multipart => true}) do |f|
-  = f.inputs do
-    = f.input :title
-    = f.input :description
-    = f.input :screenshot, :as => :file
-    = f.autocompleted_input :new_category, :url => autocomplete_category_name_how_tos_path, :label => "Category", :required => true
-  = f.buttons
-= link_to "Cancel", user_root_path
+#main.grid_8.alpha
+  %h1 What's your ??
+  = semantic_form_for @question , :html => {:multipart => true} do |f|
+    = f.inputs do
+      = f.input :title
+      = f.input :description
+      = f.input :screenshot, :as => :file
+      = f.autocompleted_input :new_category, :url => autocomplete_category_name_how_tos_path, :label => "Category", :required => true
+    = f.buttons
+  = link_to "Cancel", user_root_path
+
+#main.grid_4.omega
+  %h4 Instructions:
+  %p SOMEBODY MAY HAVE HAD THIS PROBLEM BEFORE
+  %p Checkout previous questions first such that it won't get repeated
+  %p To include code: wrap it in a code element with attribute lang giving the language
+  For Example
+  %pre
+    :preserve
+         &lt;code lang="ruby">
+         def hello
+          puts "Hello, world!"
+         end
+         &lt;/code>
+  Supported Languages Are
+  %pre
+    :preserve
+
+          C, C++
+          CSS
+          Delphi
+          diff
+          Groovy (beta)
+          HTML
+          Java
+          JavaScript
+          JSON
+          Nitro-XHTML
+          PHP
+          Python
+          RHTML (ERB+HTML)
+          Ruby
+          Scheme (beta)
+          SQL
+          XML
+          YAML
+

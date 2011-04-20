@@ -1,13 +1,13 @@
 module QuestionsHelper
 
-  def question_sidebar(question )
+  def question_sidebar(title, questions )
       arr = []
-      question.each do |question|
+      questions.each do |question|
         arr << "<li>#{link_to question.title, question_path(question) }</li>"
       end
       content_tag :aside, :class=> :widget do
         [
-          "<h3> Related </h3>",
+          "<h3> #{title} </h3>",
           "<ul>",
           arr,
           "</ul>",

@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   before_filter :authenticate_user! , :only => :user
 
   def index
-    @how_tos = HowTo.order_by('created_at', 'DESC').limit(6)
+    @how_tos = HowTo.order_by('created_at', 'DESC').limit(3)
+    @questions = Question.order_by('created_at', 'DESC').limit(12)
   end
 
   def user

@@ -9,14 +9,14 @@ module HowTosHelper
     end
   end
 
-  def how_to_sidebar(how_tos)
+  def how_to_sidebar(title, how_tos)
       arr = []
       how_tos.each do |how_to|
         arr << "<li>#{link_to how_to.title, how_to_path(how_to) }</li>"
       end
       content_tag :aside, :class=> :widget do
         [
-          "<h3> Related </h3>",
+          "<h3> #{title} </h3>",
           "<ul>",
           arr,
           "</ul>",
