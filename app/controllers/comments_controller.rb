@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
       @commentable.comments.map{ |c| c.user.email }.uniq.each do |email|
         UserMailer.commented(@commentable, @comment, email).deliver if email != current_user.email
       end
+      UserMailer.commented(@commentable, @comment, @commentable.user.email).deliver if @commentable.user != current_user
       respond_to do |format|
         format.html{ commentable_redirect(@comment) }
         format.js

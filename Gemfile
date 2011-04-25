@@ -20,7 +20,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'RedCloth'
 # gem 'rmagick'
-
+gem 'sendgrid'
 group :development, :test do
   gem 'ffaker'
   gem 'irbtools'
