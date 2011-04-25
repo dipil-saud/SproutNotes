@@ -1,7 +1,7 @@
 = "#{@comment.user.name} has commented on your #{@commentable.class} \"#{@commentable.title}\" "
 Goto
-- if @commentable.class == "HowTo"
-  = link_to @commentable.title, how_to_url(@commentable)
-- else
+- if @commentable.class.to_s == "Question"
   = link_to @commentable.title, question_url(@commentable)
+- elsif @commentable.class.to_s == "HowTo"
+  = link_to @commentable.title, how_to_url(@commentable)
 to Check it Out
