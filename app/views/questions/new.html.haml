@@ -10,40 +10,48 @@
   = link_to "Cancel", user_root_path
 
 #main.grid_4.omega
-  %h4 Instructions:
+  %div#instructions
+    %h4 Instructions:
 
-  %p SOMEBODY MAY HAVE HAD THIS PROBLEM BEFORE
-  %p - Checkout previous questions first so that it doesn't get repeated
-  %p - Supports textile
-  %p - To include code: wrap it in a code element with attribute lang giving the language
-  For Example
-  %pre
-    :preserve
-         &lt;code lang="ruby">
-         def hello
-          puts "Hello, world!"
-         end
-         &lt;/code>
-  Supported Languages Are
-  %pre
-    :preserve
-          C, C++
-          CSS
-          Delphi
-          diff
-          Groovy (beta)
-          HTML
-          Java
-          JavaScript
-          JSON
-          Nitro-XHTML
-          PHP
-          Python
-          RHTML (ERB+HTML)
-          Ruby
-          Scheme (beta)
-          SQL
-          XML
-          YAML
+    %p SOMEBODY MAY HAVE HAD THIS PROBLEM BEFORE
+    %p - Checkout previous questions first so that it doesn't get repeated
+    %p - Supports textile
+    %p - To include code: wrap it in a code element with attribute lang giving the language
+    For Example
+    %pre
+      :preserve
+           &lt;code lang="ruby">
+           def hello
+            puts "Hello, world!"
+           end
+           &lt;/code>
+    Supported Languages Are
+    %pre
+      :preserve
+            C, C++
+            CSS
+            Delphi
+            diff
+            Groovy (beta)
+            HTML
+            Java
+            JavaScript
+            JSON
+            Nitro-XHTML
+            PHP
+            Python
+            RHTML (ERB+HTML)
+            Ruby
+            Scheme (beta)
+            SQL
+            XML
+            YAML
+  %div#categories{:style => "display: none;"}
+    %h4 Categories
+    %ul
+      - Category.all.each do |category|
+        %li
+          = category.name
+  = javascript_include_tag 'display_categories'
 
 
