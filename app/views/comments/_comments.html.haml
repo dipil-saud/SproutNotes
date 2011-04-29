@@ -10,6 +10,8 @@
     = f.label :message, "Comment"
     %br/
     = f.text_area :message, :rows => 10
+    %a{ :href => "http://textile.thresholdstate.com/", :class => "textile_link" }
+      Try Textile
     %br/
     = f.submit "Post comment"
 - else

@@ -1,6 +1,4 @@
 $(function() {
-        // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-        //$( "#dialog:ui-dialog" ).dialog( "destroy" );
         $( "#screenshot_thumbnail img").live("click", function(){
             $( "#screenshot" ).dialog({
                 modal: true,
@@ -13,4 +11,8 @@ $(function() {
                             }
             });
         });
+        $("a.textile_link").click(function(){
+            window.open(this.href);
+            return false;
+        })
     });
