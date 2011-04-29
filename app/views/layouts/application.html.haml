@@ -25,6 +25,8 @@
       #content
         %nav
           %ul#menu.clearfix
+            - if user_signed_in?
+              %li= link_to "My page", user_root_path
             %li= link_to "Home", :root
             %li= link_to "HowTos", how_tos_path
             %li= link_to "Questions", questions_path
