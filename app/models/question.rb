@@ -41,6 +41,10 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def to_param
+    "#{id}-#{title.parameterize}"  
+  end
+
 end
 
 # == Schema Information

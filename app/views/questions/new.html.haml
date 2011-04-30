@@ -49,8 +49,8 @@
             SQL
             XML
             YAML
-  %div#categories{:style => "display: none;"}
-    %h4 Categories
+  %div#categories
+    %h4 Current Categories
     %ul
       - Category.all.each do |category|
         %li

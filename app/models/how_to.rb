@@ -56,6 +56,10 @@ class HowTo < ActiveRecord::Base
     end
   end
 
+  def to_param
+    "#{id}-#{title.parameterize}"  
+  end
+
 
 
 

@@ -184,6 +184,7 @@ img.thumbnail {
 
 nav.pagination {
     text-align: center;
+    color: #fff;
 }
 
 nav.pagination a {
@@ -282,6 +283,12 @@ ul.question_list li{
 ul.question_list li a{
    color: white;
 }
+
+div#categories {
+  margin-top: 500px;
+  display: none;
+}
+
 /* CSS from jquery UI */
 
 .ui-autocomplete { position: absolute; cursor: default; }
